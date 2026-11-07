@@ -1,7 +1,6 @@
 import { InfiniteSlider } from '@/components/ui/infinite-slider-horizontal';
 
 const photos = [
-  { id: 'fachada', label: 'Bienvenido a Valver', alt: 'Fachada de Valver Dental en Málaga, con la entrada acristalada y el rótulo de la clínica' },
   { id: 'sala-espera', label: 'Un momento de calma', alt: 'Sala de espera con sillas blancas, plantas y mesa de madera junto a la entrada' },
   { id: 'gabinete', label: 'Nuestro gabinete', alt: 'Gabinete odontológico con sillón azul, lámpara dental y equipo de trabajo' },
   { id: 'atencion', label: 'Cerca en cada paso', alt: 'Profesional de odontología atendiendo a un paciente en el gabinete de Valver' },
@@ -18,7 +17,7 @@ function PhotoCard({ photo }: { photo: typeof photos[number] }) {
 
 export default function FacilitiesGallery() {
   return <div className="facilities-slider">
-    <InfiniteSlider step stepInterval={4.5} label="Nuestras instalaciones: fachada, sala de espera y espacios de la clínica">
+    <InfiniteSlider step stepInterval={4.5} label="Nuestras instalaciones: sala de espera y espacios interiores de la clínica">
       {photos.map(photo => <PhotoCard key={photo.id} photo={photo} />)}
     </InfiniteSlider>
 

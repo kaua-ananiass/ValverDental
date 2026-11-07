@@ -64,7 +64,7 @@ if (essenceMount) {
   });
 }
 
-// Installations gallery enhances the supplied photograph fallback.
+// Installations gallery enhances the static interior photographs.
 const facilitiesMount = document.getElementById('facilities-gallery-root');
 if (facilitiesMount) {
   const section = document.getElementById('instalaciones');

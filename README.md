@@ -63,9 +63,9 @@ As fotografias ilustrativas foram geradas com IA e não representam pacientes, e
 
 Este é o primeiro versionamento do estado existente do site. Os 50 commits foram criados durante a importação, com datas reais e descrições por grupo de arquivos; não representam 50 etapas anteriores de desenvolvimento. As cinco branches temáticas são sequenciais. A `main` contém a entrega completa.
 
-## Galeria de instalações · 4.10.1
+## Instalações e galeria · 4.11.0
 
-A seção apresenta texto centralizado acima de uma única faixa, com três fotografias completas no desktop e uma no celular. Usa o componente `InfiniteSlider` fornecido para o projeto, adaptado em `components/ui/infinite-slider-horizontal.tsx` com Motion e `react-use-measure`. As seis fotografias locais e legendas em espanhol são definidas em `components/ui/facilities-gallery.tsx`.
+A seção apresenta a fachada em destaque à esquerda e o texto à direita no desktop; abaixo, uma única faixa exibe três fotografias dos interiores. No celular, o texto vem antes da fachada e a galeria mostra uma foto por vez. Usa o componente `InfiniteSlider` fornecido para o projeto, adaptado em `components/ui/infinite-slider-horizontal.tsx` com Motion e `react-use-measure`. As cinco fotografias dos interiores e legendas em espanhol são definidas em `components/ui/facilities-gallery.tsx`; a fachada fica exclusivamente no HTML da introdução.
 
 A faixa entra suavemente na viewport e avança uma fotografia por vez com transição de 850ms e pausa de 4,5 segundos entre trocas. O período é medido em uma única cópia mais o espaçamento, evitando saltos na repetição. A reprodução conserva a fase ao redimensionar ou retomar a aba e fica suspensa fora da viewport ou com a aba oculta. Passar o mouse não pausa nem altera a velocidade.
 

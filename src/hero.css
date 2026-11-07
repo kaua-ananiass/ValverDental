@@ -241,3 +241,15 @@
 }
 
 .facilities-slider .ifs-viewport{mask-image:none;-webkit-mask-image:none}
+
+/* Standalone façade and introduction above the interior gallery. */
+.facilities-intro-layout{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"visual copy";gap:clamp(40px,7vw,100px);align-items:center;width:100%}
+.facilities-intro-layout .facilities-copy{grid-area:copy;text-align:left;max-width:520px;margin:0}
+.facilities-intro-layout .facilities-copy>p{margin-inline:0}
+.facilities-intro-layout .facilities-copy .facilities-detail{justify-content:flex-start}
+.facilities-intro-layout .facilities-visual{grid-area:visual;justify-self:start;max-width:460px}
+.facilities-grid,.facilities.has-gallery .facilities-grid{gap:clamp(44px,5vw,76px)}
+.facilities-fallback{display:flex;gap:22px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x proximity}
+.facilities-fallback .facilities-slide{scroll-snap-align:start}
+@media(min-width:761px) and (max-width:1000px){.facilities-intro-layout{gap:36px}.facilities-intro-layout .facilities-copy h2{font-size:48px}}
+@media(max-width:760px){.facilities-intro-layout{grid-template-columns:1fr;grid-template-areas:"copy" "visual";gap:30px}.facilities-intro-layout .facilities-visual{justify-self:center;max-width:440px}.facilities-grid,.facilities.has-gallery .facilities-grid{gap:36px}}

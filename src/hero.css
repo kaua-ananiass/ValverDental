@@ -204,7 +204,7 @@
 .natural-review-stars .is-empty{fill:none;opacity:.45}
 @media(max-width:760px){.natural-review-stars svg{width:10px;height:10px}}
 
-/* Two continuous photographic rows, with the introduction above. */
+/* Single row: three complete photographs on desktop, one on mobile. */
 .facilities-grid,.facilities.has-gallery .facilities-grid{display:flex;flex-direction:column;gap:42px}
 .facilities-copy{width:100%;max-width:820px;text-align:center;margin-inline:auto}
 .facilities-copy h2{font-size:clamp(44px,4.8vw,66px);line-height:1.08;text-wrap:balance}
@@ -215,11 +215,11 @@
 .facilities-copy .facilities-detail{justify-content:center;margin-top:17px}
 .facilities-copy>.text-link{margin-top:10px}
 .facilities-gallery-host{width:100%;min-width:0}
-.facilities-slider{display:flex;flex-direction:column;gap:22px;width:100%}
+.facilities-slider{display:flex;flex-direction:column;width:100%;container-type:inline-size}
 .ifs-viewport{position:relative;overflow:hidden;width:100%;mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
 .ifs-track{display:flex;align-items:flex-start;width:max-content;will-change:transform}
 .ifs-group{display:flex;align-items:flex-start;width:max-content;flex:none}
-.facilities-slide{flex:0 0 auto;width:248px;margin:0;padding:5px 5px 0;overflow:hidden;border:1px solid #dddfd2;border-radius:16px;background:#fdfcf8}
+.facilities-slide{flex:0 0 auto;width:calc((100cqw - 44px)/3);margin:0;padding:5px 5px 0;overflow:hidden;border:1px solid #dddfd2;border-radius:16px;background:#fdfcf8}
 .facilities-slide img{display:block;width:100%;aspect-ratio:3/4;height:auto;object-fit:contain;border-radius:11px 11px 3px 3px;user-select:none}
 .facilities-slide figcaption{display:flex;align-items:center;justify-content:center;min-height:33px;padding:7px 5px;font-family:var(--v-font-body);font-size:10px;letter-spacing:.02em;line-height:1.35;color:var(--v-olive)}
 .ifs-viewport--static{overflow-x:auto;mask-image:none;-webkit-mask-image:none;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--v-sage-deep) transparent;padding-bottom:10px}
@@ -233,9 +233,11 @@
   .facilities-copy>p:not(.facilities-intro){font-size:12px;line-height:1.85;max-width:360px}
   .facilities-copy .facilities-detail{margin-top:15px}
   .facilities-slider{gap:16px}
-  .facilities-slide{width:174px;border-radius:13px;padding:4px 4px 0}
+  .facilities-slide{width:100cqw;border-radius:13px;padding:4px 4px 0}
   .facilities-slide img{border-radius:9px 9px 3px 3px}
   .facilities-slide figcaption{font-size:8px;min-height:28px}
   .ifs-viewport{mask-image:linear-gradient(90deg,transparent,#000 10px,#000 calc(100% - 10px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10px,#000 calc(100% - 10px),transparent)}
   .ifs-viewport--static{mask-image:none;-webkit-mask-image:none}
 }
+
+.facilities-slider .ifs-viewport{mask-image:none;-webkit-mask-image:none}

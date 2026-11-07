@@ -8,22 +8,19 @@ const photos = [
   { id: 'despacho', label: 'Espacio para escucharte', alt: 'Despacho con mesa de madera, dos sillas y estantería para conversar sobre el cuidado dental' },
   { id: 'pasillo', label: 'Cada detalle cuenta', alt: 'Pasillo luminoso de Valver con acceso al despacho y a las demás estancias' },
 ];
-const secondRow = [photos[3], photos[4], photos[5], photos[0], photos[1], photos[2]];
 
 function PhotoCard({ photo }: { photo: typeof photos[number] }) {
   return <figure className="facilities-slide">
-    <img src={`./assets/photos/instalaciones/${photo.id}-small.webp`} srcSet={`./assets/photos/instalaciones/${photo.id}-small.webp 480w, ./assets/photos/instalaciones/${photo.id}.webp 900w`} sizes="(max-width:760px) 174px, 248px" width="900" height="1200" alt={photo.alt} loading="eager" decoding="async" draggable={false} />
+    <img src={`./assets/photos/instalaciones/${photo.id}-small.webp`} srcSet={`./assets/photos/instalaciones/${photo.id}-small.webp 480w, ./assets/photos/instalaciones/${photo.id}.webp 900w`} sizes="(max-width:760px) calc(100vw - 40px), (max-width:1440px) 30vw, 425px" width="900" height="1200" alt={photo.alt} loading="eager" decoding="async" draggable={false} />
     <figcaption>{photo.label}</figcaption>
   </figure>;
 }
 
 export default function FacilitiesGallery() {
   return <div className="facilities-slider">
-    <InfiniteSlider duration={44} label="Nuestras instalaciones: fachada, sala de espera y espacios de la clínica">
+    <InfiniteSlider step stepInterval={4.5} label="Nuestras instalaciones: fachada, sala de espera y espacios de la clínica">
       {photos.map(photo => <PhotoCard key={photo.id} photo={photo} />)}
     </InfiniteSlider>
-    <div aria-hidden="true"><InfiniteSlider duration={49} reverse decorative entranceDelay={.08} label="Más imágenes de la clínica">
-      {secondRow.map(photo => <PhotoCard key={photo.id} photo={photo} />)}
-    </InfiniteSlider></div>
+
   </div>;
 }

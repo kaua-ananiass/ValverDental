@@ -18,9 +18,11 @@ type InfiniteSliderProps = {
   label?: string;
   entranceDelay?: number;
   decorative?: boolean;
+  step?: boolean;
+  stepInterval?: number;
 };
 
-export function InfiniteSlider({ children, gap = 22, duration = 42, durationOnHover, direction = 'horizontal', reverse = false, className, label = 'Fotografías de Valver Dental', entranceDelay = 0, decorative = false }: InfiniteSliderProps) {
+export function InfiniteSlider({ children, gap = 22, duration = 42, durationOnHover, direction = 'horizontal', reverse = false, className, label = 'Fotografías de Valver Dental', entranceDelay = 0, decorative = false, step = false, stepInterval = 4.5 }: InfiniteSliderProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
   // Measure one copy only: the loop period includes its trailing gap exactly.
   const [measureRef, { width, height }] = useMeasure();
@@ -53,6 +55,31 @@ export function InfiniteSlider({ children, gap = 22, duration = 42, durationOnHo
     const current = from + (to - from) * progress;
     previousPeriod.current = period;
     translation.set(current);
+    if (step && horizontal) {
+      const count = viewportRef.current?.querySelector('.ifs-group')?.children.length || 1;
+      const stride = period / count;
+      let index = progress * count;
+      let stopped = false;
+      let timer: ReturnType<typeof setTimeout>;
+      let animation: AnimationPlaybackControls | undefined;
+      const advance = () => {
+        if (stopped) return;
+        const next = Math.floor(index + .001) + 1;
+        animation = animate(translation, -next * stride, {
+          duration: .85,
+          ease: [.22, 1, .36, 1],
+          onComplete: () => {
+            if (stopped) return;
+            index = next % count;
+            translation.set(-index * stride);
+            timer = setTimeout(advance, stepInterval * 1000);
+          },
+        });
+      };
+      // Hold complete photographs between transitions; keep the same loop phase.
+      timer = setTimeout(advance, Math.abs(index - Math.round(index)) < .001 ? stepInterval * 1000 : 0);
+      return () => { stopped = true; clearTimeout(timer); animation?.stop(); };
+    }
     let disposed = false;
     let controls: AnimationPlaybackControls;
     const loop = () => {
@@ -62,7 +89,7 @@ export function InfiniteSlider({ children, gap = 22, duration = 42, durationOnHo
     // Resume at the existing phase after visibility, hover or resize changes.
     controls = animate(translation, to, { ease: 'linear', duration: Math.max(.01, activeDuration * (1 - progress)), onComplete: loop });
     return () => { disposed = true; controls.stop(); };
-  }, [width, height, gap, horizontal, activeDuration, reverse, reduced, visible, pageVisible, translation]);
+  }, [width, height, gap, horizontal, activeDuration, reverse, reduced, visible, pageVisible, translation, step, stepInterval]);
 
   return <motion.div
     ref={viewportRef}

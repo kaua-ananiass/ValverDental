@@ -63,12 +63,12 @@ As fotografias ilustrativas foram geradas com IA e não representam pacientes, e
 
 Este é o primeiro versionamento do estado existente do site. Os 50 commits foram criados durante a importação, com datas reais e descrições por grupo de arquivos; não representam 50 etapas anteriores de desenvolvimento. As cinco branches temáticas são sequenciais. A `main` contém a entrega completa.
 
-## Galeria de instalações · 4.10.0
+## Galeria de instalações · 4.10.1
 
-A seção apresenta texto centralizado acima de duas faixas de fotografias que deslizam em sentidos opostos. Usa o componente `InfiniteSlider` fornecido para o projeto, adaptado em `components/ui/infinite-slider-horizontal.tsx` com Motion e `react-use-measure`. As seis fotografias locais e legendas em espanhol são definidas em `components/ui/facilities-gallery.tsx`.
+A seção apresenta texto centralizado acima de uma única faixa, com três fotografias completas no desktop e uma no celular. Usa o componente `InfiniteSlider` fornecido para o projeto, adaptado em `components/ui/infinite-slider-horizontal.tsx` com Motion e `react-use-measure`. As seis fotografias locais e legendas em espanhol são definidas em `components/ui/facilities-gallery.tsx`.
 
-Cada faixa entra suavemente na viewport e mantém velocidade linear. O período é medido em uma única cópia mais o espaçamento, evitando saltos na repetição. A reprodução conserva a fase ao redimensionar ou retomar a aba e fica suspensa fora da viewport ou com a aba oculta. Passar o mouse não pausa nem altera a velocidade.
+A faixa entra suavemente na viewport e avança uma fotografia por vez com transição de 850ms e pausa de 4,5 segundos entre trocas. O período é medido em uma única cópia mais o espaçamento, evitando saltos na repetição. A reprodução conserva a fase ao redimensionar ou retomar a aba e fica suspensa fora da viewport ou com a aba oculta. Passar o mouse não pausa nem altera a velocidade.
 
-Com movimento reduzido, as fotografias ficam estáticas com rolagem horizontal nativa. A segunda faixa e as cópias de repetição não duplicam o conteúdo para leitores de tela. Sem JavaScript, a fachada e o texto permanecem disponíveis. O scroll vertical da página é livre.
+Com movimento reduzido, as fotografias ficam estáticas com rolagem horizontal nativa. As cópias de repetição não duplicam o conteúdo para leitores de tela. Sem JavaScript, a fachada e o texto permanecem disponíveis. O scroll vertical da página é livre.
 
 O componente de arrasto anterior permanece no código como referência, sem importação na entrega atual. Para compilar as ilhas, execute `npm ci` e `npm run build`.

@@ -46,7 +46,7 @@ export default function CardDeckCarousel({
   slides,
   scatter = 2.4,
   autoplay = 7000,
-  nextSection = '#experiencia',
+  nextSection = '#instalaciones',
   onChange,
   onComplete,
   ariaLabel = 'Explora nuestros tratamientos',

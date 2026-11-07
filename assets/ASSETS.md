@@ -37,3 +37,6 @@ Photorealistic editorial image for a warm premium dental care website, vertical 
 
 ## Hero com recorte transparente
 `hero-cutout.webp` e `hero-cutout-small.webp`: edição do retrato ilustrativo original com fundo removido e canal alfa preservado, usada sobre a janela em arco. Ramos minimalistas em SVG no HTML.
+
+## Nuestras instalaciones · 4.8.0
+Fotografia da fachada fornecida pelo responsável em `WhatsApp Image 2026-11-07 at 15.54.07.jpeg`. Incluída em `photos/instalaciones.webp` e variante de 720px, com o enquadramento integral preservado. Não é uma imagem gerada.

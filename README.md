@@ -4,7 +4,7 @@ Website em espanhol para a Valver Dental, em Málaga. Identidade em verde oliva 
 
 ## Conteúdo atual
 
-Hero com retrato em janela e detalhes botânicos; essência da clínica; seis tratamentos em cards; diferenciais; contato e rodapé. A seção de avaliações foi removida. Os componentes de avaliações permanecem arquivados no código, sem montagem na página.
+Hero com retrato em janela e detalhes botânicos; essência da clínica; seis tratamentos em cards; instalações com foto fornecida da fachada; diferenciais; contato e rodapé. A seção de avaliações foi removida. Os componentes de avaliações permanecem arquivados no código, sem montagem na página.
 
 Os tratamentos avançam por arrasto, setas, indicadores e reprodução automática com tempo de leitura. O scroll da página permanece independente dos cards. Animações respeitam `prefers-reduced-motion`.
 
@@ -57,7 +57,7 @@ Dados fornecidos pelo responsável pelo projeto. `bookingUrl` permanece vazio; n
 
 ## Imagens e licenças
 
-As fotografias ilustrativas foram geradas com IA e não representam pacientes, equipe ou instalações reais. O logotipo foi fornecido para este projeto. As licenças das fontes estão em `assets/fonts`; a origem dos demais assets está documentada em `assets/ASSETS.md`. Este repositório não concede uma licença geral sobre a marca e as imagens.
+As fotografias ilustrativas foram geradas com IA e não representam pacientes, equipe ou instalações reais. A seção “Nuestras instalaciones” usa a foto da fachada fornecida pelo responsável pelo projeto. O logotipo foi fornecido para este projeto. As licenças das fontes estão em `assets/fonts`; a origem dos demais assets está documentada em `assets/ASSETS.md`. Este repositório não concede uma licença geral sobre a marca e as imagens.
 
 ## Histórico Git
 

@@ -172,3 +172,24 @@ body.menu-open .whatsapp-float,body.dialog-open .whatsapp-float{visibility:hidde
 .footer-social-link:focus-visible{outline:2px solid var(--v-olive);outline-offset:4px}
 @media(hover:hover){.footer-socials .footer-social-link:hover{background:var(--v-sage);border-color:var(--v-sage-deep);text-decoration:none}}
 @media(prefers-reduced-motion:reduce){.footer-socials .footer-social-link{transition:none}}
+
+/* Installations: a quiet editorial pause between care and experience. */
+.facilities{position:relative;background:#eeeee5;isolation:isolate;overflow:clip}
+.facilities::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#fdfcf8 0%,transparent 15%,transparent 85%,var(--v-ivory) 100%);z-index:-1;pointer-events:none}
+.facilities-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(44px,7vw,100px)}
+.facilities-copy{max-width:520px}
+.facilities-copy .eyebrow{margin-bottom:22px}
+.facilities-copy h2{font-size:clamp(48px,5vw,73px);line-height:1.08}
+.facilities-copy>p{font-size:14px;line-height:1.95;max-width:390px;margin-top:18px}
+.facilities-copy>.facilities-intro{font-size:17px;line-height:1.7;color:var(--v-olive);max-width:330px;margin-top:27px}
+.facilities-detail{display:flex;align-items:center;gap:14px;margin-top:28px;font-size:10px;letter-spacing:.07em;color:var(--v-stone)}
+.facilities-detail-line{width:32px;height:1px;background:var(--v-sage-deep)}
+.facilities-copy>.text-link{margin-top:19px}
+.facilities-visual{position:relative;max-width:520px;width:100%;justify-self:end}
+.facilities-window{position:relative;overflow:hidden;aspect-ratio:1199/1312;border-radius:24px;background:var(--v-sand);border:1px solid #d3d7c8}
+.facilities-window img{width:100%;height:100%;object-fit:contain;display:block}
+.facilities-visual figcaption{display:flex;justify-content:flex-end;align-items:center;gap:9px;margin-top:13px;color:var(--v-olive);font-size:10px;letter-spacing:.035em}
+.facilities-visual figcaption>span{font-size:20px;line-height:1}
+@media(prefers-reduced-motion:no-preference){.motion-ready .facilities-visual img{transform:scale(1.035);transition:transform 1.3s var(--v-ease)}.motion-ready .facilities-visual.is-visible img{transform:scale(1)}}
+@media(min-width:761px) and (max-width:1000px){.facilities-grid{gap:40px}.facilities-copy h2{font-size:48px}.facilities-copy>p{font-size:13px}.facilities-copy>.facilities-intro{font-size:15px}}
+@media(max-width:760px){.facilities-grid{grid-template-columns:1fr;gap:34px}.facilities-copy{max-width:500px}.facilities-copy h2{font-size:clamp(42px,9vw,60px)}.facilities-copy .eyebrow{margin-bottom:18px}.facilities-copy>p{font-size:13px;margin-top:14px;max-width:440px}.facilities-copy>.facilities-intro{font-size:15px;margin-top:21px;max-width:350px}.facilities-detail{margin-top:20px;font-size:9px}.facilities-copy>.text-link{margin-top:12px}.facilities-visual{justify-self:center;max-width:440px}.facilities-visual figcaption{font-size:9px}}

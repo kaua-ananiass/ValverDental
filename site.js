@@ -95,7 +95,7 @@
         });
       });
     }, { rootMargin: '-20% 0px -55% 0px', threshold: 0 });
-    $$('#inicio, #nosotros, #servicios, #experiencia, #contacto').forEach(el => navObserver.observe(el));
+    $$('#inicio, #nosotros, #servicios, #instalaciones, #experiencia, #contacto').forEach(el => navObserver.observe(el));
   }
   const essenceTitle = $('#about-title');
   if (essenceTitle && 'IntersectionObserver' in window) {

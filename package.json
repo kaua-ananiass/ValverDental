@@ -1,7 +1,7 @@
 {
   "name": "valver-dental-hero",
   "private": true,
-  "version": "4.9.0",
+  "version": "4.10.0",
   "type": "module",
   "scripts": {
     "build": "tsc --noEmit && vite build",
@@ -16,6 +16,7 @@
     "motion": "^14.10.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-use-measure": "^2.1.7",
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {

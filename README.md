@@ -4,7 +4,7 @@ Website em espanhol para a Valver Dental, em Málaga. Identidade em verde oliva 
 
 ## Conteúdo atual
 
-Hero com retrato em janela e detalhes botânicos; essência da clínica; seis tratamentos em cards; instalações com galeria arrastável das seis fotos fornecidas; diferenciais; contato e rodapé. A seção de avaliações foi removida. Os componentes de avaliações permanecem arquivados no código, sem montagem na página.
+Hero com retrato em janela e detalhes botânicos; essência da clínica; seis tratamentos em cards; instalações com galeria horizontal animada das seis fotos fornecidas; diferenciais; contato e rodapé. A seção de avaliações foi removida. Os componentes de avaliações permanecem arquivados no código, sem montagem na página.
 
 Os tratamentos avançam por arrasto, setas, indicadores e reprodução automática com tempo de leitura. O scroll da página permanece independente dos cards. Animações respeitam `prefers-reduced-motion`.
 
@@ -63,12 +63,12 @@ As fotografias ilustrativas foram geradas com IA e não representam pacientes, e
 
 Este é o primeiro versionamento do estado existente do site. Os 50 commits foram criados durante a importação, com datas reais e descrições por grupo de arquivos; não representam 50 etapas anteriores de desenvolvimento. As cinco branches temáticas são sequenciais. A `main` contém a entrega completa.
 
-## Galeria de instalações · 4.9.0
+## Galeria de instalações · 4.10.0
 
-A seção usa uma adaptação do componente `infinite-drag-scroll` fornecido para o projeto, em `components/ui/infinite-drag-scroll.tsx`. Os dados das seis fotografias estão em `components/ui/facilities-gallery.tsx` e as imagens responsivas locais em `assets/photos/instalaciones/`.
+A seção apresenta texto centralizado acima de duas faixas de fotografias que deslizam em sentidos opostos. Usa o componente `InfiniteSlider` fornecido para o projeto, adaptado em `components/ui/infinite-slider-horizontal.tsx` com Motion e `react-use-measure`. As seis fotografias locais e legendas em espanhol são definidas em `components/ui/facilities-gallery.tsx`.
 
-O mosaico tem entrada por viewport, pequenos atrasos determinísticos entre fotos, deslocamento discreto ligado ao scroll e arrasto com inércia. O desktop permite percorrer os dois eixos; no celular, o gesto horizontal percorre a galeria e o vertical mantém a rolagem da página. Setas e teclado também funcionam. Não há listener global de wheel, pin da página ou espera para avançar às outras seções.
+Cada faixa entra suavemente na viewport e mantém velocidade linear. O período é medido em uma única cópia mais o espaçamento, evitando saltos na repetição. A reprodução conserva a fase ao redimensionar ou retomar a aba e fica suspensa fora da viewport ou com a aba oculta. Passar o mouse não pausa nem altera a velocidade.
 
-A repetição usa quatro cópias visuais com imagens carregadas previamente e conteúdo duplicado oculto de leitores de tela. Com movimento reduzido, aparecem somente as seis fotos, estáticas. Sem JavaScript, a foto da fachada e o texto seguem disponíveis.
+Com movimento reduzido, as fotografias ficam estáticas com rolagem horizontal nativa. A segunda faixa e as cópias de repetição não duplicam o conteúdo para leitores de tela. Sem JavaScript, a fachada e o texto permanecem disponíveis. O scroll vertical da página é livre.
 
-Dependência adicionada: `motion`, com `class-variance-authority`, Tailwind e TypeScript já presentes. Validação em Chromium: arrasto, inércia, ciclo completo, teclado, toque horizontal/vertical, redução de movimento, fallback sem JavaScript e layout responsivo.
+O componente de arrasto anterior permanece no código como referência, sem importação na entrega atual. Para compilar as ilhas, execute `npm ci` e `npm run build`.

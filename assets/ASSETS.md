@@ -40,3 +40,6 @@ Photorealistic editorial image for a warm premium dental care website, vertical 
 
 ## Nuestras instalaciones · 4.8.0
 Fotografia da fachada fornecida pelo responsável em `WhatsApp Image 2026-11-07 at 15.54.07.jpeg`. Incluída em `photos/instalaciones.webp` e variante de 720px, com o enquadramento integral preservado. Não é uma imagem gerada.
+
+### Atualização 4.8.1
+Foto da fachada substituída pelo arquivo fornecido `fotro-faichada.jpeg` (1086 × 1448). Variantes `instalaciones-fachada.webp` e `instalaciones-fachada-small.webp`; proporção integral preservada.

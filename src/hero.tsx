@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client';
 import ParallaxDemo from '@/demos/default';
 import CardDeckCarousel, { type Slide } from '@/components/ui/card-deck-carousel';
 import DiagonalMarqueeCarousel from '@/components/ui/great-ui-diagonal-marquee-carousel';
+import FacilitiesGallery from '@/components/ui/facilities-gallery';
 import './hero.css';
 
 const mount = document.getElementById('hero-parallax-root');
@@ -60,5 +61,21 @@ if (essenceMount) {
   if (import.meta.hot) import.meta.hot.dispose(() => {
     essenceMount.removeEventListener('valver:unmount', unmount);
     root.unmount();
+  });
+}
+
+// Installations gallery enhances the supplied photograph fallback.
+const facilitiesMount = document.getElementById('facilities-gallery-root');
+if (facilitiesMount) {
+  const section = document.getElementById('instalaciones');
+  const fallback = facilitiesMount.innerHTML;
+  const root = createRoot(facilitiesMount);
+  section?.classList.add('has-gallery');
+  root.render(<FacilitiesGallery />);
+  const unmount = () => { root.unmount(); facilitiesMount.innerHTML = fallback; section?.classList.remove('has-gallery'); };
+  facilitiesMount.addEventListener('valver:unmount', unmount, { once: true });
+  if (import.meta.hot) import.meta.hot.dispose(() => {
+    facilitiesMount.removeEventListener('valver:unmount', unmount);
+    unmount();
   });
 }

@@ -43,3 +43,18 @@ Fotografia da fachada fornecida pelo responsável em `WhatsApp Image 2026-11-07 
 
 ### Atualização 4.8.1
 Foto da fachada substituída pelo arquivo fornecido `fotro-faichada.jpeg` (1086 × 1448). Variantes `instalaciones-fachada.webp` e `instalaciones-fachada-small.webp`; proporção integral preservada.
+
+## Galeria Nuestras instalaciones · 4.9.0
+
+Fotografias fornecidas na pasta `Downloads/Imagens-Valver`, preservando enquadramento, cores e proporção na conversão para WebP. Cada foto tem uma versão de até 900px e outra de 480px em `photos/instalaciones/`.
+
+| Arquivo no site | Fonte fornecida |
+| --- | --- |
+| `fachada` | `fotro-faichada.jpeg` |
+| `sala-espera` | `WhatsApp Image 2026-11-07 at 16.04.48.jpeg` |
+| `gabinete` | `WhatsApp Image 2026-11-07 at 16.07.30.jpeg` |
+| `atencion` | `WhatsApp Image 2026-11-07 at 15.48.56.jpeg` |
+| `despacho` | `WhatsApp Image 2026-11-07 at 16.11.16.jpeg` |
+| `pasillo` | `WhatsApp Image 2026-11-07 at 16.10.37.jpeg` |
+
+As legendas descrevem os ambientes observados nas imagens. A galeria não usa imagens de bancos externos nem transforma a fotografia do atendimento em avaliação ou depoimento.

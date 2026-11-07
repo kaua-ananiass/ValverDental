@@ -12,4 +12,4 @@ O histórico registra a importação do site existente, com 50 commits não vazi
 
 Cada branch começa onde a anterior terminou; portanto, o total acumulado é 10, 20, 30, 40 e 50 commits. Elas são marcos da importação, não cinco features independentes. Etapas intermediárias podem não executar o site inteiro. Use `main` para executar, alterar e publicar a versão completa.
 
-`main` aponta para o mesmo commit final de `05-site-entrega`. Para próximas alterações, crie novas branches a partir de `main` e abra pull requests com mudanças e validações concretas.
+Ao concluir a importação, `main` apontava para o mesmo commit final de `05-site-entrega`. As alterações posteriores do site são commits novos na `main`; as cinco branches preservam os marcos da importação. Para próximas alterações, crie novas branches a partir de `main` e abra pull requests com mudanças e validações concretas.
